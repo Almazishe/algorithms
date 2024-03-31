@@ -2,15 +2,17 @@ def solution(m, n, x, y, matrix):
     res = []
 
     if x > 0:
-        res.append(str(matrix[x - 1][y]))
+        res.append(matrix[x - 1][y])
     if x < n - 1:
-        res.append(str(matrix[x + 1][y]))
+        res.append(matrix[x + 1][y])
     if y > 0:
-        res.append(str(matrix[x][y - 1]))
+        res.append(matrix[x][y - 1])
     if y < m - 1:
-        res.append(str(matrix[x][y + 1]))
+        res.append(matrix[x][y + 1])
 
-    return " ".join(sorted(res))
+    res.sort()
+
+    return " ".join(list(map(str, res)))
 
 
 def main():
